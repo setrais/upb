@@ -1,0 +1,143 @@
+.container {
+    width: auto;
+}
+.main {
+    margin-top: 30px;
+}
+
+div.menu.link {
+    text-align: center;
+    vertical-align: middle;
+}
+
+div.menu.link span {
+    padding: 0 8px;
+}
+
+div.menu.link span a{
+    color: #333; /*#0a6ebd;*/
+    padding: 0 8px;
+}
+
+div.menu.link span a:hover{
+    color: #000;
+    text-decoration: none;
+}
+
+div.menu.link span a:link{
+    color: #05A2DE; color: #2C85A6; color: #026990; color: #40BEEE; color: #6ECBEE;
+    color: #05A2DE; /* Богородичный */
+    text-decoration: none;
+}
+
+/* Богородичный */
+.color.bogrodichen {
+    color: #05A2DE; color: #2C85A6; color: #026990; color: #40BEEE; color: #6ECBEE;
+    color: #05A2DE;
+}
+
+/* Богородичная триада */
+#upb .color.bogorodichen.triada {
+    /* Основной Цвет: */
+    color: #05A2DE;
+    /* color: #2C85A6; */
+    /* color: #026990; */
+    color: #40BEEE;
+    /* color: #6ECBEE; */
+
+    /* Вторичный Цвет A: */
+    /* color: #FFB600; */
+    /* color: #BF9630; */
+    /* color: #A67600; */
+    color: #FFC840;
+    color: #FFD773;
+    /* Вторичный Цвет B: */
+    color: #FF2C00;
+    color: #BF4930;
+    /* color: #A61D00; */
+    /* color: #FF6140; */
+    /* color: #FF8B73; */
+}
+
+#upb .color.bogorodichna.schema.blue {
+    color: #026990;
+    color: #2C85A7;
+    color: #05A2DE;
+    color: #40BEEE;
+}
+
+#upb .color.bogorodichna.schema.yellow {
+    color: #FFC840;
+    color: #FFD773;
+}
+
+#upb .color.bogorodichna.schema.red {
+    color: #FF2C00;
+    color: #BF4930;
+}
+
+#upb .color.bogorodichna.schema.white {
+    color: white;
+    color: #F0F0F0;
+}
+
+#upb .color.bogorodichna.schema.black {
+    color: black;
+    color: #333;
+}
+
+#upb .navbar-inverse {
+    background-color: #2C85A7;
+    border-color: #40BEEF;
+}
+#upb .navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #080808;
+}
+
+/* Богородичная тетрада */
+.color.bogorodichen.tetrada {
+    /* Основной Цвет: */
+    color: #05A2DE; color: #2C85A6; color: #026990; color: #40BEEF; color: #6ECBEF;
+    /* Вторичный Цвет A: */
+    color: #1031E3; color: #3346AA; color: #051C94; color: #4963F1; color: #7689F1;
+    /* Вторичный Цвет B: */
+    color: #FFB600;	color: #BF9630; color: #A67600; color: #FFC840; color: #FFD773;
+    /*Дополнительный Цвет:*/
+    color: #FF8500; color: #BF7A30; color: #A65600; color: #FFA340; color: #FFBC73;
+}
+
+/* Богородичная акцент аналогия */
+.color.bogorodichen.analog.acent {
+    /* Основной Цвет: */
+    color: #05A2DE;	color: #2C85A6;	color: #026990; color: #40BEEF; color: #6ECBEF;
+    /* Вторичный Цвет A: */
+    color: #1031E3; color: #3346AA; color: #051C94; color: #4963F1; color: #7689F1;
+    /* Вторичный Цвет B: */
+    color: #00E756;	color: #2BAD5C; color: #009638; color: #3DF381; color: #6DF39F;
+    /* Дополнительный Цвет: */
+    color: #FF8500; color: #BF7A30; color: #A65600; color: #FFA340; color: #FFBC73;
+}
+
+.icon-address:before {
+    content: '\f08f';
+    vertical-align: bottom;
+    padding-right: 5px;
+}
+
+.icxp.glyphicon-send:before {
+    content: "\e171";
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#w1-collapse {
+    margin-left: 320px;
+}
+
+nav > .container > .navbar-header {
+}

@@ -1,0 +1,59 @@
+#Order Allow,Deny
+#Deny from all
+#Allow from 178.92.102.206
+#php_value display_errors Off
+#php_value log_errors On
+#php_value register_globals Off
+#php_value safe_mode On
+#php_flag magic_quotes_gpc 0
+#php_flag magic_quotes_runtime 0
+
+<IfModule mod_negotiation.c>
+AddDefaultCharset utf-8
+# AddDefaultCharset windows-1251
+</IfModule>
+
+#<IfModule mod_mime.c>
+#  AddType application/x-httpd-php .ico
+#  AddDefaultCharset windows-1251
+#   AddDefaultCharset UTF-8
+#</IfModule>
+
+<IfModule mod_dir.c>
+  DirectoryIndex index.php
+</IfModule>
+
+#<IfModule mod_expires.c>
+#  ExpiresActive on
+#  ExpiresByType image/jpeg "access plus 3 day"
+#  ExpiresByType image/gif "access plus 3 day"
+#</IfModule>
+
+#php_flag allow_call_time_pass_reference 1
+#php_flag session.use_trans_sid off
+#php_value session.save_path /tmp
+
+<IfModule mod_rewrite.c>
+    #Options +FollowSymlinks
+    #IndexIgnore */*
+    RewriteEngine on
+    #if a directory or a file exists, use it directly
+    ##RewriteCond %{HTTP_HOST} ^www.ashop\.rtvs.net$ [NC]
+    ##RewriteRule ^(.*)$ http://ashop.rtvs.net/$1 [R=301,L]
+    ##RewriteRule ^ru/(.*)$ /$1 [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #otherwise forward it to index.php
+    RewriteRule . index.php
+
+    #RewriteCond %{REQUEST_FILENAME} !-f [OR]
+    #RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^.*$ web/index.php
+
+    #RewriteEngine on
+    #RewriteCond %{HTTP_HOST} ^www.ashop\.rtvs.net$ [NC]
+    #RewriteRule ^(.*)$ http://ashop.rtvs.net/$1 [R=301,L]
+    #RewriteCond $1 !^(index\.php|admin.php|robots\.txt|favicon\.ico|skin|third_party|jcpost|contact-us)
+    #RewriteRule ^(.*)$ ./index.php/$1 [L]
+</IfModule>

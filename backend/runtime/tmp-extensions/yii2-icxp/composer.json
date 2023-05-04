@@ -1,0 +1,21 @@
+{
+    "name": "icxp/yii2-icxp",
+    "description": "Class of ICXP",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Aleksandr Rikun",
+            "email": "setrais@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "yii\\icxp\\": ""
+        }
+    }
+}

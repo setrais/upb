@@ -1,0 +1,67 @@
+/** Styles for grid **/
+
+.iblocks-index .header-id {
+    width:80px;text-align:center;
+}
+
+.iblocks-index .filter-id {
+    width:80px;text-align:left;
+}
+
+.iblocks-index .content-id {
+    padding-left:20px;width:100px;text-align:left;vertical-align: middle;
+}
+
+.nid {
+    width:100px;
+}
+
+.header-id.sid, .filter-id.sid, .content-id.sid  {
+    width:250px;
+    text-align:left;
+}
+
+.header-id.sid {
+    padding-left:20px;
+}
+
+td.grid.detile p, td.grid.anons p{
+    width:210px;
+    text-align:left;
+    white-space: normal;
+    font-size: smaller;
+    display: block;
+    margin: 0;
+    /*text-overflow: ellipsis;
+    max-height: 125px;
+    overflow: hidden;*/
+}
+
+td.grid.seo.desc p{
+    width:210px;
+    text-align:left;
+    white-space: normal;
+    font-size: smaller;
+    display: block;
+    margin: 0;
+    /*text-overflow: ellipsis;
+    max-height: 125px;
+    overflow: hidden;*/
+}
+
+/*td.grid.seo.desc p.new:after {
+    content: "...";
+}*/
+.grid.name p {
+    width:210px;
+    text-align:left;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: 0;
+}
+
+.grid-view td {
+    margin:0px;
+    vertical-align: middle !important;
+}

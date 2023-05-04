@@ -1,0 +1,89 @@
+#Order Allow,Deny
+#Deny from all
+#Allow from 178.92.102.206
+#php_value display_errors Off
+#php_value log_errors On
+#php_value register_globals Off
+#php_value safe_mode On
+#php_flag magic_quotes_gpc 0
+#php_flag magic_quotes_runtime 0
+
+#<IfModule mod_negotiation.c>
+# AddDefaultCharset utf-8
+# AddDefaultCharset windows-1251
+#</IfModule>
+
+#<IfModule mod_mime.c>
+#  AddType application/x-httpd-php .ico
+#  AddDefaultCharset windows-1251
+#   AddDefaultCharset UTF-8
+#</IfModule>
+
+<IfModule mod_dir.c>
+   DirectoryIndex index.php
+</IfModule>
+
+#<IfModule mod_expires.c>
+#  ExpiresActive on
+#  ExpiresByType image/jpeg "access plus 3 day"
+#  ExpiresByType image/gif "access plus 3 day"
+#</IfModule>
+
+#php_flag allow_call_time_pass_reference 1
+#php_flag session.use_trans_sid off
+#php_value session.save_path /tmp
+
+# Mod_Autoindex
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  Options +FollowSymlinks
+  RewriteEngine On
+
+  # если /admin, то в backend
+
+  RewriteCond %{REQUEST_URI} ^/(api)
+  RewriteRule ^api/assets/(.*)$ api/web/assets/$1 [L]
+  RewriteRule ^api/css/(.*)$ api/web/css/$1 [L]
+  RewriteRule ^api/js/(.*)$ api/web/js/$1 [L]
+  RewriteCond %{REQUEST_URI} !^/api/web/(assets|js|css|js)/
+  RewriteCond %{REQUEST_URI} ^/(api)
+  RewriteRule ^.*$ api/web/index.php [L]
+
+  RewriteCond %{REQUEST_URI} ^/(admin)
+  RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
+  RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
+  RewriteRule ^admin/bootstrap-sb-admin/(.*)$ backend/web/bootstrap-sb-admin/$1 [L]
+  RewriteRule ^admin/fancybox/(.*)$ backend/web/fancybox/$1 [L]
+  RewriteRule ^admin/js/(.*)$ backend/web/js/$1 [L]
+  RewriteCond %{REQUEST_URI} !^/backend/web/(assets|js|css)/
+  RewriteCond %{REQUEST_URI} ^/(admin)
+  RewriteRule ^.*$ backend/web/index.php [L]
+
+  RewriteCond %{REQUEST_URI} ^/(assets|css|js|images|uploads)
+  RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+  RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+  RewriteRule ^js/(.*)$ frontend/web/js/$1 [L]
+  RewriteRule ^images/(.*)$ frontend/web/images/$1 [L]
+  RewriteRule ^uploads/(.*)$ uploads/$1 [L]
+  RewriteRule ^(.*)$ frontend/web/$1 [L]
+
+  RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
+  RewriteCond %{REQUEST_URI} !index.php
+  RewriteCond %{REQUEST_FILENAME} !-f [OR]
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ frontend/web/index.php
+
+# short variant
+# AddDefaultCharset UTF-8
+# Options -Indexes
+# RewriteEngine On
+#
+# RewriteCond %{REQUEST_URI} ^/(admin)
+# RewriteRule ^admin(\/?.*)$ backend/web/$1 [L]
+#
+# RewriteCond %{REQUEST_URI} ^/
+# RewriteRule ^(\/?.*)$ frontend/web/$1 [L]
+</IfModule>
